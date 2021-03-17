@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Update recipe{% endblock %}
+{% block name %}Edit recipe{% endblock %}
+
+{% block content %}
+    <section class="blog_area section-padding">
+        <div class="container">
+            {% if user.is_authenticated and user.pk == recipe.author.pk %}
+
+                <h1>Update recipe</h1>
+
+                <form method="post">
+                    <div class="form-group">
+                        {% csrf_token %}
+                        {{ form.media }}
+                        {{ form.as_p }}
+                        <a class="btn" href="{% url 'recipe_detail' recipe.pk %}">Go back</a>
+                        <button class="btn btn-success">Update</button>
+                    </div>
+                </form>
+            {% else %}
+                <div class="alert alert-warning" role="alert">
+                    <p>To update a recipe you have to log in and be the author of this recipe</p>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

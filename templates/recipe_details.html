@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ recipe.title_tag }}{% endblock %}
+{% block name %}Recipe{% endblock %}
+{% block content %}
+
+    <!--================Blog Area =================-->
+    <section class="blog_area single-post-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 posts-list">
+                    <div class="single-post">
+                        <div class="feature-img">
+                            <img class="img-fluid" src="{{ recipe.image.url }}">
+                        </div>
+                        <div class="blog_details">
+                            <h2>{{ recipe.dish_name }}</h2>
+                            <ul class="blog-info-link mt-3 mb-4">
+                                <li><a><i
+                                        class="fa fa-user"></i>{{ recipe.author.first_name }} {{ recipe.author.last_name }}
+                                </a></li>
+                                <li><a>Publication date: {{ recipe.publication_date }}</a></li>
+                            </ul>
+                            <p class="excert">{{ recipe.description|safe }}</p>
+                            <h4>Ingredients:</h4>
+                            <p>
+                                {{ recipe.ingredients|safe }}
+                            </p>
+                            <h4>Preparations:</h4>
+                            <p>{{ recipe.body|safe }}</p>
+                            <a href="{% url 'blog' %}" class="btn">Back</a>
+                            {% if user == recipe.author %}
+                                <a href="{% url 'update_recipe' recipe.pk %}" class="btn btn-primary">Update recipe</a>
+                                <a href="{% url 'delete_recipe' recipe.pk %}" class="btn btn-danger">Delete recipe</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ Blog Area end =================-->
+{% endblock %}

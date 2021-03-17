@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block name %}Home{% endblock %}
+{% block content %}
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="slider_active owl-carousel">
+            <div class="single_slider  d-flex align-items-center slider_bg_2 overlay2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text ">
+                                <h3> Learn how to cook soup </h3>
+                                <p>The finest soups layer flavor every step of the way.<br> Delicimo shows you how to
+                                    make any kind you'd like</p>
+                                <div class="video_service_btn">
+                                    <a href="#" class="boxed-btn3">Get started</a>
+                                    <a href="#" class="boxed-btn3-white"> <i class="fa fa-play"></i>
+                                        See How to cook</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text ">
+                                <h3> Learn how to cook sailmon </h3>
+                                <p>Salmon is versiltile and delicious.<br>Delicimo shows you how to cook it perfectly
+                                    every time</p>
+                                <div class="video_service_btn">
+                                    <a href="#" class="boxed-btn3">Get started</a>
+                                    <a href="#" class="boxed-btn3-white"> <i class="fa fa-play"></i>
+                                        See How to cook</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+    <!-- about  -->
+    <div class="about_area ">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters align-items-center">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="about_image">
+                        <img src="{% static 'img/about/about.png' %}" alt="About">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="about_info">
+                        <h3>Delicimo</h3>
+                        <p> It is a digital cookbook and cooking guide alike, available on all platforms, that helps
+                            home cooks of every level discover, save and organize the world’s best recipes, while also
+                            helping them become better, more competent cooks. </p>
+                        <ul>
+                            <li> Easy</li>
+                            <li> Tasty</li>
+                            <li> Enjoyable</li>
+                        </ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ about  -->
+
+{% endblock %}

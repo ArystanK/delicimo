@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete recipe{% endblock %}
+{% block name %}Delete recipe{% endblock %}
+{% block content %}
+    <section class="blog_area section-padding">
+        <div class="container">
+
+            {% if user.is_authenticated and user.pk == recipe.author.pk %}
+
+                <form method="post">
+                    <div class="form-group">
+                        {% csrf_token %}
+                        <h2><strong style="color: #FF0000;">Are you
+                            sure?</strong></h2><br><br>
+                        <a class="btn" href="{% url 'recipe_detail' recipe.pk %}">Go
+                            back</a>
+                        <button class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+            {% else %}
+                <div class="alert alert-warning" role="alert">
+                    <p>To delete a recipe you have to log in and be the author of this recipe</p>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Create recipe{% endblock %}
+{% block name %}Create recipe{% endblock %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+        <!-- ================ contact section start ================= -->
+        <section class="contact-section">
+            <div class="container">
+                <form class="form-contact contact_form" method="post" id="contactForm"
+                      novalidate="novalidate" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.media }}
+                    {{ form.as_p }}
+                    <div class="form-group mt-3">
+                        <button type="submit" class="button button-contactForm boxed-btn">Create</button>
+                        <br>
+                    </div>
+                </form>
+            </div>
+        </section>
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+            <p>To add a new recipe you have to log in</p>
+        </div>
+    {% endif %}
+    <!-- ================ contact section end ================= -->
+{% endblock %}
