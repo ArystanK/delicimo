@@ -13,7 +13,7 @@
                         {% for recipe in recipe_list %}
                             <article class="blog_item">
                                 <div class="blog_item_img">
-                                    <img class="card-img rounded-0" src="{% static 'img/blog/single_blog_1.png' %}"
+                                    <img class="card-img rounded-0" src="{{ recipe.image.url }}"
                                          alt="blog1">
                                     <a href="{% url 'recipe_detail' recipe.pk %}" class="blog_item_date">
                                         <h3>{{ recipe.publication_date }}</h3>

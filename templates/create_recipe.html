@@ -21,6 +21,10 @@
                 </form>
             </div>
         </section>
+        <script>
+            let name = "{{ user.id }}";
+            document.getElementById("user").value = name;
+        </script>
     {% else %}
         <div class="alert alert-warning" role="alert">
             <p>To add a new recipe you have to log in</p>

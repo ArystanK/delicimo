@@ -11,7 +11,7 @@ class RecipeForm(forms.ModelForm):
 
         widgets = {
             'dish_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'author': forms.Select(attrs={'class': 'form-control'}),
+            'author': forms.TextInput(attrs={'class': 'form-control', 'value': '', 'id': 'user', 'type': 'hidden'}),
             'description': forms.Textarea(attrs={'class': 'form-control'}),
             'ingredients': forms.Textarea(attrs={'class': 'form-control', 'margin-bottom': '20px'}),
             'body': forms.Textarea(attrs={'class': 'form-control'}),
